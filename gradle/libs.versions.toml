@@ -1,0 +1,20 @@
+[versions]
+springBoot     = "3.5.3"        # 컴파일 하한 (spec §4.2 — 소비자 hrm Boot 3.5.3 최저)
+awsSdk         = "2.46.17"      # AWS SDK v2 BOM (착수일 2026-06-24 Maven Central 재확인)
+testcontainers = "1.21.4"       # 1.x 최신 패치 (착수일 2026-06-24 GitHub releases 확인)
+
+[libraries]
+# BOM (platform 으로 사용)
+spring-boot-dependencies = { module = "org.springframework.boot:spring-boot-dependencies", version.ref = "springBoot" }
+awssdk-bom               = { module = "software.amazon.awssdk:bom", version.ref = "awsSdk" }
+testcontainers-bom       = { module = "org.testcontainers:testcontainers-bom", version.ref = "testcontainers" }
+
+# 버전 BOM 위임 (version 생략)
+spring-boot-autoconfigure           = { module = "org.springframework.boot:spring-boot-autoconfigure" }
+spring-boot-configuration-processor = { module = "org.springframework.boot:spring-boot-configuration-processor" }
+jakarta-validation-api              = { module = "jakarta.validation:jakarta.validation-api" }
+slf4j-api                           = { module = "org.slf4j:slf4j-api" }
+awssdk-s3                           = { module = "software.amazon.awssdk:s3" }
+junit-jupiter                       = { module = "org.junit.jupiter:junit-jupiter" }
+testcontainers                      = { module = "org.testcontainers:testcontainers" }
+testcontainers-junit-jupiter        = { module = "org.testcontainers:junit-jupiter" }
