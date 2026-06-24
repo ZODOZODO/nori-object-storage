@@ -13,6 +13,9 @@ dependencies {
     testImplementation(libs.junit.jupiter)
     testImplementation(libs.testcontainers)
     testImplementation(libs.testcontainers.junit.jupiter)
+    testImplementation(libs.spring.boot.test)            // ApplicationContextRunner (AutoConfiguration 와이어링 검증)
+    testImplementation(libs.spring.boot.autoconfigure)   // AutoConfigurations — main 은 compileOnly 라 test 에 별도 필요
+    testImplementation(libs.assertj.core)
     testRuntimeOnly("org.junit.platform:junit-platform-launcher")
     // awssdk-s3 는 implementation 이라 test classpath 에 이미 포함 (S3Client 직접 사용 가능)
 }

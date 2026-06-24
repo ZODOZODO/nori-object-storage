@@ -12,6 +12,12 @@ import org.springframework.validation.annotation.Validated;
 @ConfigurationProperties("nori.storage.s3")
 public class NoriStorageS3Properties {
 
+    /**
+     * 자동 설정 활성화 스위치. 기본 false — 소비자가 부팅 환경(yaml/properties/env)에서
+     * 명시적으로 true 를 줄 때만 ObjectStorageClient 빈이 생성된다. 끄면 SDK 커넥션도 안 뜬다.
+     */
+    private boolean enabled = false;
+
     /** SeaweedFS S3 엔드포인트 (예: http://192.168.0.203:8333). */
     @NotBlank
     private String endpoint;
@@ -31,6 +37,14 @@ public class NoriStorageS3Properties {
 
     /** S3 호환 엔드포인트 필수. 기본 true. */
     private boolean pathStyle = true;
+
+    public boolean isEnabled() {
+        return enabled;
+    }
+
+    public void setEnabled(boolean enabled) {
+        this.enabled = enabled;
+    }
 
     public String getEndpoint() {
         return endpoint;

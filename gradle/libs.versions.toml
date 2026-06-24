@@ -18,3 +18,5 @@ awssdk-s3                           = { module = "software.amazon.awssdk:s3" }
 junit-jupiter                       = { module = "org.junit.jupiter:junit-jupiter" }
 testcontainers                      = { module = "org.testcontainers:testcontainers" }
 testcontainers-junit-jupiter        = { module = "org.testcontainers:junit-jupiter" }
+spring-boot-test                    = { module = "org.springframework.boot:spring-boot-test" }
+assertj-core                        = { module = "org.assertj:assertj-core" }
