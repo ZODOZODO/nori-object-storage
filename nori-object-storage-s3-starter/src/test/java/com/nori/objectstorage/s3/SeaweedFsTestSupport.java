@@ -25,8 +25,8 @@ import software.amazon.awssdk.services.s3.model.CreateBucketRequest;
 @Testcontainers
 abstract class SeaweedFsTestSupport {
 
-    static final String ACCESS_KEY = "admin";
-    static final String SECRET_KEY = "norisys911!";
+    static final String ACCESS_KEY = "test-access-key";
+    static final String SECRET_KEY = "test-secret-key";
     static final String BUCKET = "nori-test";
     static final String REGION = "us-east-1";
     static final int S3_PORT = 8333;
