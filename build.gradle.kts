@@ -50,7 +50,7 @@ subprojects {
             if (projectId != null) {
                 repositories.maven {
                     name = "GitLab"
-                    url = uri("https://gitlab.com/api/v4/projects/$projectId/packages/maven")
+                    url = uri("https://gitlab.noricloud.org/api/v4/projects/$projectId/packages/maven")
                     credentials(HttpHeaderCredentials::class) {
                         val job = providers.environmentVariable("CI_JOB_TOKEN").orNull
                         if (job != null) {
