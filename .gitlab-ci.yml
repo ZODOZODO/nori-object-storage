@@ -1,12 +1,13 @@
 # =========================================================
 # nori-object-storage CI — GitLab Package Registry 발행
 # =========================================================
-# main push 시 두 모듈(api·s3-starter)을 com.nori:*:0.0.1-SNAPSHOT 좌표로
-# 이 프로젝트(83704008)의 Package Registry 에 발행한다.
+# release 태그(v<version>) push 시 두 모듈(api·s3-starter)을 com.nori:*:<version> 좌표로
+# 이 프로젝트(gitlab.noricloud.org project 33)의 Package Registry 에 발행한다.
+# version 은 고정 release 라 main push 마다 다시 올리면 같은 좌표의 바이트가 바뀐다 → 태그에서만 발행한다.
 # 발행 배선은 build.gradle.kts(afterEvaluate publishing)이 CI_PROJECT_ID·CI_JOB_TOKEN
 # 환경변수를 읽어 처리한다 — 별도 시크릿 등록 불필요(GitLab 예약 변수).
 #
-# 소비자(hrm 등)는 gitlabPackageProjectIds=83704008 로 이 Registry 를 참조한다.
+# 소비자는 gitlabPackageProjectIds 에 33 을 넣어 이 Registry 를 참조한다.
 # =========================================================
 
 stages:
@@ -21,4 +22,4 @@ publish:
     - chmod +x ./gradlew
     - ./gradlew publish --no-daemon
   rules:
-    - if: '$CI_COMMIT_BRANCH == "main"'
+    - if: '$CI_COMMIT_TAG =~ /^v\d+\.\d+\.\d+$/'

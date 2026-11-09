@@ -11,14 +11,14 @@
 | `com.nori:nori-object-storage-api` | 순수 계약 — `ObjectStorageClient` + 값 타입 + 예외. Spring·AWS 의존 0. |
 | `com.nori:nori-object-storage-s3-starter` | S3 구현 + `@AutoConfiguration`. 소비자는 이 모듈 1개만 의존. |
 
-버전 `0.0.1-SNAPSHOT` / group `com.nori` / JVM 21 / Java.
+버전 `0.0.1` / group `com.nori` / JVM 21 / Java.
 
 ## 소비 (요약)
 
 `build.gradle.kts`:
 
 ```kotlin
-implementation("com.nori:nori-object-storage-s3-starter:0.0.1-SNAPSHOT")
+implementation("com.nori:nori-object-storage-s3-starter:0.0.1")
 ```
 
 `application.yml`:
